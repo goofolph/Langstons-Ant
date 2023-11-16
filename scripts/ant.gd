@@ -55,6 +55,7 @@ func _process(delta):
 			tMap.set_cell(0, gridPos, 0, Vector2(0,0), 0)
 	
 	gridPos += direction
+
 	if gridPos[0] < 0:
 		gridPos[0] = tilesHorizontal - 1
 	elif gridPos[0] >= tilesHorizontal:
@@ -63,6 +64,5 @@ func _process(delta):
 		gridPos[1] = tilesVerticle - 1
 	elif gridPos[1] >= tilesVerticle:
 		gridPos[1] = 0
-#	print(gridPos)
+
 	position = tMap.map_to_local(gridPos)
-#	print(position)

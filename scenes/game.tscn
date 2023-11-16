@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://d2c4q7re7iyvw"]
 
-[ext_resource type="Texture2D" uid="uid://5o7a6rani2lk" path="res://resources/tiles/textures/white.png" id="1_77y6b"]
+[ext_resource type="Texture2D" uid="uid://c5a3uoyv866qo" path="res://resources/tiles/textures/white.png" id="1_77y6b"]
 [ext_resource type="PackedScene" uid="uid://mv4fg66onak3" path="res://scenes/ant.tscn" id="1_d2m2n"]
-[ext_resource type="Texture2D" uid="uid://bcnljk74annby" path="res://resources/tiles/textures/grey.png" id="2_glwu7"]
-[ext_resource type="Texture2D" uid="uid://cmpu1aruwadja" path="res://resources/tiles/textures/red.png" id="3_0ttup"]
-[ext_resource type="Texture2D" uid="uid://la01ma1atk1o" path="res://resources/tiles/textures/green.png" id="4_j2ekp"]
-[ext_resource type="Texture2D" uid="uid://dchqynhw2u0h7" path="res://resources/tiles/textures/blue.png" id="5_c0bss"]
+[ext_resource type="Texture2D" uid="uid://bat24t77gitif" path="res://resources/tiles/textures/grey.png" id="2_glwu7"]
+[ext_resource type="Texture2D" uid="uid://c0ucmuo8tbryh" path="res://resources/tiles/textures/red.png" id="3_0ttup"]
+[ext_resource type="Texture2D" uid="uid://8mpscugbpfbu" path="res://resources/tiles/textures/green.png" id="4_j2ekp"]
+[ext_resource type="Texture2D" uid="uid://dlq75f5snh1ay" path="res://resources/tiles/textures/blue.png" id="5_c0bss"]
 [ext_resource type="Script" path="res://scripts/fps_label.gd" id="7_5qsgv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0nf7a"]
