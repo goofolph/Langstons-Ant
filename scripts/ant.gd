@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var tile_size = 8
+var tile_size = 16
 var tilesHorizontal
 var tilesVerticle
 var gridPos = Vector2(27,16)
@@ -55,4 +55,14 @@ func _process(delta):
 			tMap.set_cell(0, gridPos, 0, Vector2(0,0), 0)
 	
 	gridPos += direction
+	if gridPos[0] < 0:
+		gridPos[0] = tilesHorizontal - 1
+	elif gridPos[0] >= tilesHorizontal:
+		gridPos[0] = 0
+	if gridPos[1] < 0:
+		gridPos[1] = tilesVerticle - 1
+	elif gridPos[1] >= tilesVerticle:
+		gridPos[1] = 0
+#	print(gridPos)
 	position = tMap.map_to_local(gridPos)
+#	print(position)

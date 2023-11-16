@@ -9,4 +9,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	set_text("FPS %d" % Engine.get_frames_per_second())
-	print("FPS %d" % Engine.get_frames_per_second())
