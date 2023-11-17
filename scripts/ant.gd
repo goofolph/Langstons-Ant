@@ -10,10 +10,37 @@ var inputs = {"ui_right": Vector2.RIGHT,
 			"ui_up": Vector2.UP,
 			"ui_down": Vector2.DOWN}
 var direction = Vector2.UP
+var rules = {
+	"turns": [
+		random_dir(),
+		random_dir(),
+		random_dir(),
+		random_dir(),
+		random_dir(),
+		random_dir(),
+		random_dir(),
+		random_dir(),
+	],
+	"tiles": [0,1,2,3,4,5,6,7]
+}
+
+func random_dir():
+	match (randi()% 3):
+		0:
+			return "left"
+		1:
+			return "right"
+		2:
+			return "forward"
+		_:
+			return "reverse"
 
 func _ready():
 	tilesHorizontal = ProjectSettings.get_setting("display/window/size/viewport_width") / tile_size
 	tilesVerticle = ProjectSettings.get_setting("display/window/size/viewport_height") / tile_size
+	
+	rules["tiles"].shuffle()
+	
 	
 	gridPos = Vector2(tilesHorizontal/ 2,tilesVerticle/2)
 	position = gridPos * tile_size
@@ -42,18 +69,24 @@ func turn_right():
 		Vector2.RIGHT:
 			direction = Vector2.DOWN
 
+func turn(dir):
+	match dir:
+		"left":
+			turn_left()
+		"right":
+			turn_right()
+		"reverse":
+			turn_left()
+			turn_left()
+
 func _process(delta):
 	var tMap = get_tree().get_current_scene().get_node("TileMap")
 	var tile = tMap.get_cell_source_id(0, gridPos)
-	
-	match tile:
-		0: # white
-			turn_right()
-			tMap.set_cell(0, gridPos, 1, Vector2(0,0), 0)
-		1: # grey
-			turn_left()
-			tMap.set_cell(0, gridPos, 0, Vector2(0,0), 0)
-	
+
+	print(rules["tiles"][tile])
+	turn(rules["turns"][tile])
+	tMap.set_cell(0, gridPos, rules["tiles"][tile], Vector2(0,0), 0)
+
 	gridPos += direction
 
 	if gridPos[0] < 0:
